@@ -5,6 +5,7 @@
 - redirection to settings page on plugin activation
 
 ### Changed
+- exclude .vscode from releases
 
 ### Fixed
 
