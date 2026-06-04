@@ -1,16 +1,19 @@
 <?php
+
 namespace TSJIPPY\MAINTENANCE;
+
 use TSJIPPY;
 
 use function TSJIPPY\addElement;
 use function TSJIPPY\addRawHtml;
 
 
-if ( ! defined('ABSPATH')) {
+if (! defined('ABSPATH')) {
     exit;
 }
 
-class AdminMenu extends \TSJIPPY\ADMIN\SubAdminMenu{
+class AdminMenu extends \TSJIPPY\ADMIN\SubAdminMenu
+{
 
     /**
      * AdminMenu constructor.
@@ -18,11 +21,13 @@ class AdminMenu extends \TSJIPPY\ADMIN\SubAdminMenu{
      * @param array $settings The settings for the plugin
      * @param string $name The name of the plugin
      */
-    public function __construct($settings, $name) {
+    public function __construct($settings, $name)
+    {
         parent::__construct($settings, $name);
     }
 
-    public function settings($parent) {
+    public function settings($parent)
+    {
         $label  = addElement('label', $parent);
         addElement('h4', $label, [], 'Message title');
         addElement('input', $label, ['type' => 'text', 'name' => 'title', 'value' => $this->settings['title'] ?? '', 'style' => 'width:100%;']);
@@ -43,29 +48,32 @@ class AdminMenu extends \TSJIPPY\ADMIN\SubAdminMenu{
             'convert_newlines_to_brs'    => true,
             'textarea_name'             => "message",
             'textarea_rows'             => 10
-       );
+        );
 
         echo wp_editor(
             $this->settings["message"] ?? 'This website is currently unavailable, but will be available again soon',
             "message",
             $tinyMceSettings
-       );
+        );
 
         addRawHtml(ob_get_clean(), $parent);
 
         return true;
     }
 
-    public function emails($parent) {
+    public function emails($parent)
+    {
         return false;
     }
 
-    public function data($parent='') {
+    public function data($parent = '')
+    {
 
         return false;
     }
 
-    public function functions($parent) {
+    public function functions($parent)
+    {
 
         return false;
     }
