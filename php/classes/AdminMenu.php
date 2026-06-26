@@ -50,7 +50,7 @@ class AdminMenu extends \TSJIPPY\ADMIN\SubAdminMenu
             'textarea_rows'             => 10
         );
 
-        echo wp_editor(
+        wp_editor(
             $this->settings["message"] ?? 'This website is currently unavailable, but will be available again soon',
             "message",
             $tinyMceSettings
