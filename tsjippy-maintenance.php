@@ -5,7 +5,7 @@ namespace TSJIPPY\MAINTENANCE;
 /**
  * Plugin Name:          Tsjippy Maintenance
  * Description:          When you enable this plugin your website will be put in maintenance mode. That means the frontend of your website will be no longer accessible. The backend (wp-admin) is still available.
- * Version:              10.3.3
+ * Version:              10.3.4
  * Author:               Ewald Harmsen
  * AuthorURI:            harmseninnigeria.nl
  * Requires at least:    6.3
